@@ -1,7 +1,7 @@
 """Random tips shown at CLI session start to help users discover features."""
 
 import random
-from typing import Optional
+
 
 # ---------------------------------------------------------------------------
 # Tip corpus — one-liners covering slash commands, CLI flags, config,
@@ -323,7 +323,6 @@ TIPS = [
     "GPT-5 and Codex use 'developer' role instead of 'system' in the message format.",
     "Per-task auxiliary overrides: auxiliary.vision.provider, auxiliary.compression.model, etc. in config.yaml.",
     "The auxiliary client treats 'main' as a provider alias — resolves to your actual primary provider + model.",
-    "Smart routing can auto-route simple queries to a cheaper model — set smart_model_routing.enabled: true.",
     "hermes claw migrate --dry-run previews OpenClaw migration without writing anything.",
     "File paths pasted with quotes or escaped spaces are handled automatically — no manual cleanup needed.",
     "Slash commands never trigger the large-paste collapse — /command with big arguments works correctly.",
@@ -346,6 +345,4 @@ def get_random_tip(exclude_recent: int = 0) -> str:
     return random.choice(TIPS)
 
 
-def get_tip_count() -> int:
-    """Return the total number of tips available."""
-    return len(TIPS)
+
